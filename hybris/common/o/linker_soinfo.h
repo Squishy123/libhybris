@@ -160,6 +160,12 @@ struct soinfo {
   uint32_t* ARM_exidx;
   size_t ARM_exidx_count;
  private:
+#elif defined(__arm64__)
+   public:
+  // ARM EABI section used for stack unwinding.
+  uint32_t* ARM_exidx;
+  size_t ARM_exidx_count;
+ private:
 #elif defined(__mips__)
   uint32_t mips_symtabno_;
   uint32_t mips_local_gotno_;
