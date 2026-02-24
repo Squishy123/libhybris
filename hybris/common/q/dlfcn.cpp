@@ -88,9 +88,9 @@ void* __loader_dlvsym(void* handle,
 void __loader_add_thread_local_dtor(void* dso_handle) __LINKER_PUBLIC__;
 void __loader_remove_thread_local_dtor(void* dso_handle) __LINKER_PUBLIC__;
 libc_shared_globals* __loader_shared_globals() __LINKER_PUBLIC__;
-#if defined(__arm__)
+// #if defined(__arm__)
 _Unwind_Ptr __loader_dl_unwind_find_exidx(_Unwind_Ptr pc, int* pcount) __LINKER_PUBLIC__;
-#endif
+// #endif
 }
 
 static pthread_mutex_t g_dl_mutex = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
@@ -388,11 +388,11 @@ int android_dlclose(void* handle) {
   return __loader_dlclose(handle);
 }
 
-#if defined(__arm__)
+// #if defined(__arm__)
 _Unwind_Ptr android_dl_unwind_find_exidx(_Unwind_Ptr pc, int* pcount) {
   return __loader_dl_unwind_find_exidx(pc, pcount);
 }
-#endif
+// #endif
 
 int android_dl_iterate_phdr(int (*cb)(struct dl_phdr_info* info, size_t size, void* data), void* data) {
   return __loader_dl_iterate_phdr(cb, data);

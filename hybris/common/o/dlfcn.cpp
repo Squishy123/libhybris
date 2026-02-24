@@ -255,9 +255,9 @@ void __cfi_fail(uint64_t CallSiteTypeId, void* Ptr, void *DiagData, void *Caller
       /* st_size */ 0, \
     }
 
-#if defined(__arm__)
+//#if defined(__arm__)
 _Unwind_Ptr __android_dl_unwind_find_exidx(_Unwind_Ptr pc, int *pcount);
-#endif
+//#endif
 
 static const char ANDROID_LIBDL_STRTAB[] =
   // 0000000000111111 11112222222222333 333333344444444 44555555555566666 6666677777777778 8888888889999999999
@@ -398,11 +398,11 @@ int android_dlclose(void* handle) {
   return __dlclose(handle);
 }
 
-#if defined(__arm__)
+//#if defined(__arm__)
 _Unwind_Ptr android_dl_unwind_find_exidx(_Unwind_Ptr pc, int* pcount) {
   return __android_dl_unwind_find_exidx(pc, pcount);
 }
-#endif
+//#endif
 
 int android_dl_iterate_phdr(int (*cb)(struct dl_phdr_info* info, size_t size, void* data), void* data) {
   return __android_dl_iterate_phdr(cb, data);

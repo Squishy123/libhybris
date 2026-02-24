@@ -55,10 +55,10 @@ int dl_iterate_phdr(int (*)(struct dl_phdr_info*, size_t, void*), void*);
 int dl_iterate_phdr(int (*)(struct dl_phdr_info*, size_t, void*), void*);
 #endif
 
-#ifdef __arm__
+//#ifdef __arm__
 typedef uintptr_t _Unwind_Ptr;
 _Unwind_Ptr dl_unwind_find_exidx(_Unwind_Ptr, int*);
-#endif
+//#endif
 
 /* Used by the dynamic linker to communicate with the debugger. */
 struct link_map {
