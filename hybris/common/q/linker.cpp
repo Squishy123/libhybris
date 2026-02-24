@@ -427,7 +427,7 @@ static bool realpath_fd(int fd, std::string* realpath) {
   return true;
 }
 
-#if defined(__arm__)
+//#if defined(__arm__)
 
 // For a given PC, find the .so that it belongs to.
 // Returns the base address of the .ARM.exidx section
@@ -444,7 +444,7 @@ _Unwind_Ptr do_dl_unwind_find_exidx(_Unwind_Ptr pc, int* pcount) {
   return 0;
 }
 
-#endif
+//#endif
 
 // Here, we only have to provide a callback to iterate across all the
 // loaded libraries. gcc_eh does the rest.

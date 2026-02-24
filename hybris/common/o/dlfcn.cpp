@@ -157,12 +157,12 @@ int __android_dl_iterate_phdr(int (*cb)(dl_phdr_info* info, size_t size, void* d
   return do_dl_iterate_phdr(cb, data);
 }
 
-#if defined(__arm__)
+//#if defined(__arm__)
 _Unwind_Ptr __android_dl_unwind_find_exidx(_Unwind_Ptr pc, int* pcount) {
   ScopedPthreadMutexLocker locker(&g_dl_mutex);
   return do_dl_unwind_find_exidx(pc, pcount);
 }
-#endif
+//#endif
 
 void __android_set_application_target_sdk_version(uint32_t target) {
   // lock to avoid modification in the middle of dlopen.
