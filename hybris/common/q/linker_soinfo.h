@@ -203,6 +203,12 @@ struct soinfo {
 #if !defined(__LP64__)
   bool mips_check_and_adjust_fp_modes();
 #endif
+#else 
+  public:
+  // ARM EABI section used for stack unwinding.
+  uint32_t* ARM_exidx;
+  size_t ARM_exidx_count;
+
 #endif
   size_t ref_count_;
  public:

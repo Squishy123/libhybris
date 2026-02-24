@@ -3813,10 +3813,10 @@ bool soinfo::prelink_image() {
     }
   }
 
-#if defined(__arm__)
+//#if defined(__arm__)
   (void) phdr_table_get_arm_exidx(phdr, phnum, load_bias,
                                   &ARM_exidx, &ARM_exidx_count);
-#endif
+//#endif
 
   // Extract useful information from dynamic section.
   // Note that: "Except for the DT_NULL element at the end of the array,
